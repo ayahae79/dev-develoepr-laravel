@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\Api\CrmCustomerApiController;
 
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', 'middleware' => ['auth:sanctum']], function () {
+Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
+  Route::post('/customers', [CrmCustomerApiController::class, 'store']);
 });
